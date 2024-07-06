@@ -1,0 +1,341 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red18\green19\blue24;
+\red238\green249\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0;\cssrgb\c8627\c9804\c12157;
+\cssrgb\c94510\c98039\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28900\viewh15300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 Please follow these steps to AWS Account:\
+\
+Step 1: Access the documentation for getting started with AWS. You can find it at the following link: https://sway.cloud.microsoft/psuIhqtLhcO8x2Dm?ref=Link\
+\
+Step 2: Create an AWS Free Tier account by following the instructions provided in the documentation. Keep in mind that this account comes with a one-year free trial.\
+\
+Step 3: If you already have an AWS account created within one year, you can skip the account creation process. \
+\
+Step 4: Please make sure to read the disclaimer provided in the documentation after creating your AWS Free Tier account.\
+\
+Step 5: To enjoy the benefits of the AWS Free Tier, make sure you add a valid credit card / debit card, or another payment method to your account. Note that some debit cards might not work for this purpose.\
+\
+Step 6: Try to complete these steps on or before 29 June 2024.\
+\
+Step 7: If you have any questions or need assistance during the process, refer to the AWS Free Tier Limits page for additional information: https://aws.amazon.com/free\
+\
+That's it! You're all set to start your DevOps journey with the Free Tier account. Happy Learning!\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Day 1: 29.03.2024, Saturday\
+\
+Install GIT\
+\'97\'97\'97\'97\'97\
+Steps to setup AWS Ubuntu\
+                                                                                                                        \
+Aws login : https://console.aws.amazon.com/console/home\
+\
+01) Login to AWS Console (Root user)\
+02) Search for EC2 Under Services and Click EC2 --> Dashboard\
+03) Click Launch Instance\
+04) Choose Ubuntu (Free Tier Eligibility) / select instance type: t2.micro   (only free tier)\
+05) Create a new pair of key : Name, RSA (Selected), .pem (selected) -> Create\
+06) Move the downloaded pem file to a specific folder (DevOps)\
+07) Launch Instance and wait for Success\
+08) Click on Instance Id and Confirm the Public IP (eg: 13.233.233.66)\
+09) Open the terminal / Git Bash and go to the folder (DevOps)\
+10) type: ssh -i <pem-file.pem> ubuntu@<public-ip>\
+11) change the permission using chmod 400 <pem-file.pem> // if needed for mac pc\
+12) Once connected, confirm the session with commands like pwd, whoami\
+\
+whoami\
+pwd\
+clear\
+ls \
+ls -all\
+cd \
+cd ..\
+mkdir FolderName\
+touch FileName.txt\
+nano FileName.txt\
+vi FileName.txt\
+cat FileName.txt\
+echo "Demo Test"> FileName.txt\
+cp FileName.txt FolderName\
+mv FileName.txt FolderName\
+rm FileName.txt\
+\
+Steps to Setup Java, Maven, Chrome in Ubuntu Machine to Run Automated Test\
+\
+
+\f1\b 1) \cf2 Update the latest packages for AWS ubuntu !!
+\f0\b0 \cf0 \
+\
+   sudo apt-get update\
+\
+
+\f1\b 2) Install JDK 11
+\f0\b0 \
+\
+   sudo apt install openjdk-11-jdk\
+\
+   // confirm by running the following command\
+\
+   java -version\
+\
+
+\f1\b 3) Install Maven 
+\f0\b0 \
+\
+    sudo apt install maven\
+\
+    // confirm by running the following command\
+\
+   mvn -v\
+\
+
+\f1\b 4) Install XVFB
+\f0\b0 \
+\
+    sudo apt install xvfb\
+\
+    // This is run on particular port\
+\
+    Xvfb :99 &\
+\
+    // Export the display : \
+\
+    export DISPLAY=:99\
+\
+
+\f1\b 5) Install chrome browser
+\f0\b0 \
+\
+    1) command to download latest chrome version\
+\
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb\
+\
+    2) UnPackage the chrome\
+\
+    sudo dpkg -i google-chrome-stable_current_amd64.deb\
+\
+    3) Run the following command (if the above command failed for any reasons)\
+\
+     sudo apt --fix-broken install\
+\
+
+\f1\b 6) Get the latest selenium code to run the tests !!
+\f0\b0 \
+\
+   Clone the repo : The code from Git will come to ubuntu\
+\
+    git clone https://github.com/mohan-balakrishnan/webdriver-tests\
+    \
+    cd webdriver-tests\
+\
+
+\f1\b 7) Run the selenium code
+\f0\b0 \
+\
+    mvn clean test \
+\
+
+\f1\b 8) Confirm the results in reports folder
+\f0\b0 \
+\
+\
+Command to login to ubuntu server\
+\
+ssh -I UbuntuServer.pem ubuntu@Public IP Address\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+30.06.2024, Sunday\
+\
+
+\f1\b 1. Run the following command To download the folders and paste it into local.
+\f0\b0 \
+	scp -i Keypair.pem -r ubuntu@13.212.204.231:/home/ubuntu/webdriver-tests/reports .\
+\
+
+\f1\b 2. To run QA test:
+\f0\b0 \
+\
+git clone https://github.com/mohan-balakrishnan/webdriver-leafhub\
+cd webdriver-leafhub\
+mvn clean test -DsuiteXmlFile=smoke.xml\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs22 \cf3 \CocoaLigature0 /home/ubuntu/JavaFolders/webdriver-leafhub/reports\
+\
+url: http://13.213.69.169/leaf/\
+UserName: Babu\
+Password: admin\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \CocoaLigature1 cd webdriver-tests\
+mvn clean test \
+\
+cd webdriver-leafhub\
+mvn clean test -DsuiteXmlFile=smoke.xml\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+QA_UbuntuServerNew - 
+\f3 \cf4 \cb5 \expnd0\expndtw0\kerning0
+54.179.122.20
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 \cb5 \expnd0\expndtw0\kerning0
+DEV_APPS public IP 18.143.158.45
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Steps to setup AWS Ubuntu Instance and Run Simple Java Application \
+\
+01) Login to AWS Console (IAM user)\
+02) Search for EC2 Under Services and Click EC2 --> Dashboard\
+03) Click Launch Instance\
+04) Choose Ubuntu 20 version  (Free Tier Eligibility)\
+05) Create a new pair of key : Name, RSA (Selected), .pem (selected) -> Create\
+06) Move the downloaded pem file\
+07) Launch Instance and wait for Success(allows All traffic / allow port 22 & 80)\
+08) Click on Instance Id and Confirm the Public IP (Eg: 13.233.233.66)\
+09) Open the terminal / Git Bash and go to the .pem file location\
+10) type: ssh -i <pem-file.pem> ubuntu@<public-ip>\
+11) change the permission using chmod 400 <pem-file.pem> // if needed (MAC users)\
+\
+----------------\
+\
+Steps to install Java, Maven, Run Dev App -> run below commands in ec2\
+\
+Connect ec2 instance via SSH \
+\
+
+\f1\b # This is auto update all the repo updates
+\f0\b0 \
+sudo apt-get update\
+\
+
+\f1\b # Install JDK 8
+\f0\b0 \
+sudo apt install openjdk-8-jdk -y\
+\
+
+\f1\b # Install Maven
+\f0\b0 \
+sudo apt install -y maven\
+\
+sudo rm -rf jenkins-pipeline\
+\
+# Clone the repo\
+git clone https://github.com/mohan-balakrishnan/jenkins-pipeline\
+\
+# Move to dir \
+cd jenkins-pipeline/leafhub\
+\
+# Start Spring boot app\
+nohup sudo mvn spring-boot:run > /dev/null 2>&1 &\
+\
+\
+To confirm the application status wait for 5 minutes, run http://
+\f3\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+18.143.158.45
+\f0\fs36 \cf0 \cb1 \kerning1\expnd0\expndtw0 /leaf in local browser\
+\
+UserName: Babu\
+Password: admin\
+\
+\
+https://github.com/Thilagavathy17/webdriver-leafhub\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+To run Automation test from your DEV App \
+\
+1.\uc0\u8288  \u8288 Go to the GitHub website: Open your web browser and navigate to GitHub.\
+\
+2.\uc0\u8288  \u8288 Sign Up: Click on the "Sign up" button.\
+\
+    url: https://github.com/signup\
+\
+3.\uc0\u8288  \u8288 open below url and click on fork\
+\
+    https://github.com/mohan-balakrishnan/webdriver-leafhub\
+\
+open this url :  https://github.com/Your_userName/webdriver-leafhub\
+\
+    go to this location: webdriver-leafhub/src/main/resources/config.properties\
+\
+    update the Your_dev_ip in this file and commit\
+\
+\
+login to QA sever via SSH  run following commands\
+\
+sudo rm -rf webdriver-leafhub\
+git clone https://github.com/Your_userName/webdriver-leafhub\
+cd webdriver-leafhub\
+mvn clean test -DsuiteXmlFile=smoke.xml\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Create a GitHub Repository\
+\
+1.\uc0\u8288  \u8288 Download and install Git: [Git Download Link](https://git-scm.com/downloads)\
+\
+2.\uc0\u8288  \u8288 Configure Global Settings:\
+   - Set username:\
+     \
+\uc0\u8288 \u8239      git config --global user.name "FIRST_NAME LAST_NAME"\
+     \uc0\u8239 \u8288 \
+   - Set email address:\
+     \
+\uc0\u8288 \u8239      git config --global user.email "MY_NAME@example.com"\
+     \uc0\u8239 \u8288 \
+\
+3.\uc0\u8288  \u8288 Set Up Your Local Project:\
+   - Create a new folder on your local system.\
+   - Open Command Prompt (CMD) and navigate to your new folder.\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8259 	}   - Add or create files in this folder.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+4.\uc0\u8288  \u8288 Commit Your Changes:\
+   - Initialize Git in the folder:\
+     \
+\uc0\u8288 \u8239      git init\
+     \uc0\u8239 \u8288 \
+   - Check the status of files:\
+     \
+\uc0\u8288 \u8239      git status\
+     \uc0\u8239 \u8288 \
+   - Add all files to staging area:\
+     \
+\uc0\u8288 \u8239      git add .\
+     \uc0\u8239 \u8288 \
+   - Commit changes with a message:\
+     \
+\uc0\u8288 \u8239      git commit -m "Initial commit"\
+     \uc0\u8239 \u8288 \
+\
+5.\uc0\u8288  \u8288 Push to GitHub:\
+   - Link your local repository to GitHub:\
+     \
+\uc0\u8288 \u8239      git remote add origin https://github.com/username/Your-Repo.git\
+     \uc0\u8239 \u8288 \
+   - Switch the branch to main:\
+     \
+\uc0\u8288 \u8239      git branch -M main\
+     \uc0\u8239 \u8288 \
+   - Push local changes to GitHub:\
+     \
+\uc0\u8288 \u8239      git push -u origin main\
+     \uc0\u8239 \u8288 \
+\pard\tx940\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls2\ilvl1
+\f2\fs22 \cf3 {\listtext	\uc0\u8259 	}\CocoaLigature0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\
+\
+\
+}
